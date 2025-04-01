@@ -1,11 +1,11 @@
 {
-  "name": "bsv-dev-tools",
-  "version": "1.0.7",
+  "name": "@bsv/mcp",
+  "version": "1.0.8",
   "description": "Custom MCP Server for BSV development providing context and tools for development",
   "type": "module",
   "main": "build/index.js",
   "bin": {
-    "bsv-dev-tools": "build/index.js"
+    "bsv-mcp": "build/index.js"
   },
   "files": [
     "build",

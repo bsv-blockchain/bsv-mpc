@@ -1,6 +1,6 @@
-# bsv-dev-tools - MCP Server for Bitcoin SV Development
+# @bsv/mcp - MCP Server for Bitcoin SV Development
 
-[![NPM Version](https://img.shields.io/npm/v/bsv-dev-tools)](https://www.npmjs.com/package/bsv-dev-tools)
+[![NPM Version](https://img.shields.io/npm/v/@bsv/mcp)](https://www.npmjs.com/package/@bsv/mcp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This package provides a [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server designed to assist developers working with key Bitcoin SV (BSV) repositories. It offers specialized tools and prompts accessible through MCP-compatible clients (like Windsurf, Claude Desktop, Continue, etc.), enabling Large Language Models (LLMs) to understand and interact with the BSV codebase more effectively.
@@ -156,12 +156,12 @@ chmod +x setup_bsv_repos.sh
 
 ### Step 3: Configure Your MCP Client
 
-Edit your client's MCP configuration file (e.g., `mcp_config.json` for Windsurf, `claude_desktop_config.json` for Claude Desktop). Add **both** the `server-filesystem` and `bsv-dev-tools` servers.
+Edit your client's MCP configuration file (e.g., `mcp_config.json` for Windsurf, `claude_desktop_config.json` for Claude Desktop). Add **both** the `server-filesystem` and `@bsv/mcp` servers.
 
 **IMPORTANT:**
 
 * Replace `/path/to/your/bsv-clones` with the **exact, absolute path** you used when running `setup_bsv_repos.sh`.
-* Ensure this path is used correctly for **both** server entries (`args` for filesystem, `env.BSV_REPOS_DIR` for bsv-dev-tools).
+* Ensure this path is used correctly for **both** server entries (`args` for filesystem, `env.BSV_REPOS_DIR` for `@bsv/mcp`).
 
 ```json
 {
@@ -176,11 +176,11 @@ Edit your client's MCP configuration file (e.g., `mcp_config.json` for Windsurf,
       ]
     },
 
-    "bsv-dev-tools": {
+    "@bsv/mcp": {
       "command": "npx",
       "args": [
         "-y",
-        "bsv-dev-tools"
+        "@bsv/mcp"
       ],
       "env": {
         "BSV_REPOS_DIR": "/path/to/your/bsv-clones"
@@ -212,11 +212,11 @@ Configuration Error / Request Failed:
 
 Verify the absolute paths in your mcp_config.json are correct and point to the directory created by setup_bsv_repos.sh.
 
-Ensure the BSV_REPOS_DIR environment variable is set correctly for the bsv-dev-tools entry.
+Ensure the BSV_REPOS_DIR environment variable is set correctly for the `@bsv/mcp` entry.
 
 Make sure Node.js/npm are installed and in your PATH.
 
-Try running each server command manually from your terminal (including setting export BSV_REPOS_DIR=... before running npx bsv-dev-tools) to see detailed error messages.
+Try running each server command manually from your terminal (including setting export BSV_REPOS_DIR=... before running npx `@bsv/mcp`) to see detailed error messages.
 
 Check your MCP client's specific logs for more detailed error information about server startup failures.
 
