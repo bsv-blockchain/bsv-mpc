@@ -1,0 +1,39 @@
+{
+  "name": "@bsv/mcp",
+  "version": "1.0.8",
+  "description": "Custom MCP Server for BSV development providing context and tools for development",
+  "type": "module",
+  "main": "build/index.js",
+  "bin": {
+    "bsv-mcp": "build/index.js"
+  },
+  "files": [
+    "build",
+    "package.json",
+    "README.md",
+    "LICENSE.md"
+  ],
+  "scripts": {
+    "start": "node build/index.js",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "bitcoin-sv",
+    "bsv",
+    "wallet"
+  ],
+  "author": "jonesjBSV (BSV Association)",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.7.0",
+    "execa": "^9.5.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.14",
+    "typescript": "^5.8.2"
+  }
+}
