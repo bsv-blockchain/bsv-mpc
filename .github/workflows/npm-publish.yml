@@ -1,16 +1,13 @@
-name: Publish Package to npm
+name: Build and Publish
 
-on:
-  push:
-    tags:
-      - 'v*.*.*' # Trigger on version tags like v1.0.0, v1.2.3 etc.
+on: [push, pull_request]
 
 jobs:
-  publish:
+  build-and-publish:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      # id-token: write # Uncomment if using OIDC for provenance
+      packages: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -18,23 +15,16 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18' # Or your preferred Node.js version
+          node-version: '18.x'
           registry-url: 'https://registry.npmjs.org/'
 
       - name: Install dependencies
         run: npm ci
 
       - name: Build package
-        run: npm run build # Make sure 'build' script exists in package.json
+        run: npm run build
 
       - name: Publish package to npm
-        run: npm publish # Add '--access public' if it's a public scoped package
+        run: npm publish --provenance --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      # Optional: Create GitHub Release
-      - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          # This pulls the release notes from the tag annotation
-          generate_release_notes: true
+          NODE_AUTH_TOKEN: ${{ secrets.BSV_NPM_TOKEN }}
