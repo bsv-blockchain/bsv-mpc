@@ -161,7 +161,11 @@ Edit your client's MCP configuration file (e.g., `mcp_config.json` for Windsurf,
 **IMPORTANT:**
 
 * Replace `/path/to/your/bsv-clones` with the **exact, absolute path** you used when running `setup_bsv_repos.sh`.
+<<<<<<< HEAD
 * Ensure this path is used correctly for **both** server entries (`args` for filesystem, `env.BSV_REPOS_DIR` for `@bsv/mcp`).
+=======
+* Ensure this path is used correctly for **both** server entries (`args` for filesystem, `env.BSV_REPOS_DIR` for bsv-dev-tools).
+>>>>>>> 39e64a6 (updated github workflow)
 
 ```json
 {
