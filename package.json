@@ -8,10 +8,11 @@
     "bsv-mcp": "build/index.js"
   },
   "files": [
+    "NOTICE",
     "build",
     "package.json",
     "README.md",
-    "LICENSE.md"
+    "LICENSE"
   ],
   "scripts": {
     "start": "node build/index.js",
@@ -26,7 +27,7 @@
     "wallet"
   ],
   "author": "jonesjBSV (BSV Association)",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.7.0",
     "execa": "^9.5.2",
