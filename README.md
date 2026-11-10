@@ -1,7 +1,7 @@
 # @bsv/mcp - MCP Server for Bitcoin SV Development
 
 [![NPM Version](https://img.shields.io/npm/v/@bsv/mcp)](https://www.npmjs.com/package/@bsv/mcp)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
 This package provides a [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) server designed to assist developers working with key Bitcoin SV (BSV) repositories. It offers specialized tools and prompts accessible through MCP-compatible clients (like Windsurf, Claude Desktop, Continue, etc.), enabling Large Language Models (LLMs) to understand and interact with the BSV codebase more effectively.
 
@@ -255,7 +255,7 @@ You can then configure your MCP client to run this local node build/index.js com
 
 License
 
-This project is licensed under the MIT License.
+This project is licensed under the [Apache License 2.0](LICENSE).
 
 ---
 
