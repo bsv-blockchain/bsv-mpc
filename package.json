@@ -8,6 +8,7 @@
     "bsv-mcp": "build/index.js"
   },
   "files": [
+    "PATENTS",
     "NOTICE",
     "build",
     "package.json",
